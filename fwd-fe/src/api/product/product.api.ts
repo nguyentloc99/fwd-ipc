@@ -1,4 +1,5 @@
 import authorizedRequest from 'api/request/authorizedRequest';
+import { QuotationProductModel } from 'models/entity/product/quotation-product.model';
 
 export interface GetProductApiBody {
   genderCd: string;
@@ -9,10 +10,11 @@ export interface GetProductApiBody {
   saPerYear?: number;
 }
 
-export interface GetProductApiResponse {}
+export interface GetProductApiResponse {
+  quotationProductList: QuotationProductModel[];
+}
 
 export function getProductApi(body: GetProductApiBody) {
-  console.log(body);
   return authorizedRequest.post<GetProductApiResponse, GetProductApiResponse>(
     '/getProduct',
     body,

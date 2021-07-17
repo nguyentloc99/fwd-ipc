@@ -1,5 +1,5 @@
 export const MainRouteConst = {
-  AUTH: '/auth',
+  AUTH: 'auth',
   APP: '',
 };
 
@@ -13,4 +13,5 @@ export const AppRouteConst = {
 
 export const ProductRouteConst = {
   GET_PRODUCT: `${AppRouteConst.PRODUCT}/getProduct`,
+  VIEW_PRODUCT: `${AppRouteConst.PRODUCT}/viewProduct`,
 };

@@ -11,14 +11,16 @@ import * as Yup from 'yup';
 import { has, get } from 'lodash';
 import { useDispatch } from 'react-redux';
 import { getProductAction } from 'store/product/product.action';
+import { PaymentFrequency } from 'models/entity/product/quotation-product.model';
+import { GENDER } from 'models/common.model';
 import classes from './get-product-page.module.scss';
 
 interface FormValue {
-  genderCd: string;
+  genderCd: GENDER;
   dob: Date;
   planCode: string;
   premiumPerYear: number;
-  paymentFrequency: string;
+  paymentFrequency: PaymentFrequency;
   saPerYear: number;
 }
 
@@ -36,7 +38,7 @@ const GetProductPage: FC = () => {
       dob: new Date(),
       planCode: '',
       premiumPerYear: null,
-      paymentFrequency: 'YEARLY',
+      paymentFrequency: PaymentFrequency.YEARLY,
       saPerYear: undefined,
     }),
     [],
@@ -57,22 +59,22 @@ const GetProductPage: FC = () => {
       {
         data: {},
         label: 'Yearly',
-        value: 'YEARLY',
+        value: PaymentFrequency.YEARLY,
       },
       {
         data: {},
         label: 'Half a year',
-        value: 'HALFYEARLY',
+        value: PaymentFrequency.HALFYEARLY,
       },
       {
         data: {},
         label: 'Quarterly',
-        value: 'QUARTERLY',
+        value: PaymentFrequency.QUARTERLY,
       },
       {
         data: {},
         label: 'Monthly',
-        value: 'MONTHLY',
+        value: PaymentFrequency.MONTHLY,
       },
     ],
     [],
@@ -111,11 +113,24 @@ const GetProductPage: FC = () => {
               <div className={classes.formItem}>
                 <h5>Your Gender</h5>
                 <div className={classes.radioContainer}>
-                  <FormikRadio name="genderCd" value="MALE" label="Male" />
-                  <FormikRadio name="genderCd" value="FEMALE" label="Female" />
+                  <FormikRadio
+                    name="genderCd"
+                    value={GENDER.MALE}
+                    label="Male"
+                  />
+                  <FormikRadio
+                    name="genderCd"
+                    value={GENDER.FEMALE}
+                    label="Female"
+                  />
                 </div>
                 {has(errors, 'genderCd') ? (
-                  <p className={'error-text'}>{get(errors, 'genderCd')}</p>
+                  <p
+                    data-puppeteer-id="gender-error-id"
+                    className={'error-text'}
+                  >
+                    {get(errors, 'genderCd')}
+                  </p>
                 ) : null}
               </div>
               <div className={classes.formItem}>
@@ -141,7 +156,9 @@ const GetProductPage: FC = () => {
                   ))}
                 </div>
                 {has(errors, 'planCode') ? (
-                  <p className={'error-text'}>{get(errors, 'planCode')}</p>
+                  <p data-puppeteer-id="plan-error-id" className={'error-text'}>
+                    {get(errors, 'planCode')}
+                  </p>
                 ) : null}
               </div>
               <div className={classes.formItem}>
