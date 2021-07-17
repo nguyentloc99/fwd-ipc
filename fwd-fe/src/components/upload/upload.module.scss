@@ -1,0 +1,14 @@
+@import 'src/assets/css/utilities/index';
+
+.container {
+  .label {
+    cursor: pointer;
+    width: 100%;
+    .inputFile {
+      display: none;
+    }
+  }
+  .childrenContainer {
+    width: 100%;
+  }
+}

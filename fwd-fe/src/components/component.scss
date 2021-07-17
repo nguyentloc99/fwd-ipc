@@ -1,0 +1,63 @@
+@import 'src/assets/css/utilities/index';
+@import './container/container';
+@import './card/card';
+@import './select/select.scss';
+@import './pagination/pagination.scss';
+
+.error-text {
+  font-size: px-to-rem(14);
+  color: $c_danger;
+  margin: 5px 0px;
+}
+
+.formik-component {
+  display: flex;
+  position: relative;
+
+  .error-text {
+    position: absolute;
+    left: 0px;
+    bottom: calc(100% + 5px);
+    font-size: px-to-rem(14);
+    color: $white;
+    background-color: $c_danger;
+    padding: 5px 10px;
+    margin: 0px;
+    border-radius: 7px;
+    z-index: 2;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 20px;
+      bottom: -5px;
+      border: 10px solid $c_danger;
+      border-right-color: transparent;
+      border-left-color: transparent;
+      border-bottom: 0;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 20px;
+      bottom: -5px;
+      border: 10px solid $c_danger;
+      border-right-color: transparent;
+      border-left-color: transparent;
+      border-bottom: 0;
+    }
+  }
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}

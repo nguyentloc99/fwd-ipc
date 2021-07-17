@@ -1,0 +1,31 @@
+@import 'assets/css/utilities';
+
+.container {
+  .tabHeader {
+    display: flex;
+
+    .tabItem {
+      background-color: $c_primary;
+      font-weight: bold;
+      margin-right: 10px;
+      border-radius: 20px 20px 0 0;
+      padding: 15px 10px;
+      min-width: 200px;
+      font-size: $p_font_size;
+      color: #fff;
+      text-align: center;
+      cursor: pointer;
+
+      &.selected {
+        color: $c_secondary;
+        background-color: #fff;
+      }
+    }
+  }
+
+  .tabMainContent {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,25 @@
+@import 'assets/css/utilities';
+.container {
+  width: 100%;
+
+  display: flex;
+
+  .searchInput {
+    height: 50px;
+    background: #f7f7f7;
+    border-radius: 28px 0 0 28px;
+    flex: 1;
+
+    .input {
+      font-size: $p_font_size !important;
+      color: #707070 !important;
+      border: none !important;
+    }
+  }
+
+  button {
+    border-radius: 0 28px 28px 0 !important;
+    flex: 0 0 105px;
+    height: 50px !important;
+  }
+}

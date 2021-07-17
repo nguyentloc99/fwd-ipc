@@ -1,0 +1,83 @@
+@import 'src/assets/css/utilities/index';
+
+.controlContainer {
+  &.focused {
+    &.hasLabel {
+      background-color: transparent;
+      border: solid 1px $c_primary;
+
+      .label {
+        color: $c_primary;
+        font-size: px-to-rem(16 * 0.75);
+        padding-left: 20px;
+
+        .asteriskRequired {
+          margin-left: 4px;
+          font-size: 1rem;
+          color: $c_danger;
+        }
+      }
+    }
+  }
+
+  &.hasLabel {
+    min-height: 55px;
+    padding-top: 7px;
+    background-color: transparent;
+    border: solid 1px $c_grey;
+    border-radius: 7px;
+
+    .label {
+      color: $c_grey;
+      font-size: px-to-rem(16 * 0.75);
+      padding-left: 20px;
+
+      .asteriskRequired {
+        margin-left: 4px;
+        font-size: 1rem;
+        color: $c_danger;
+      }
+    }
+  }
+
+  &.hasLabelError {
+    border: solid 1px $c_danger;
+
+    .label {
+      color: $c_danger;
+
+      .asteriskRequired {
+        margin-left: 4px;
+        font-size: 1rem;
+        color: $c_danger;
+      }
+    }
+  }
+
+  &.hasLabelDisabled {
+    cursor: not-allowed;
+    border: solid 1px $disabled;
+    opacity: 0.6;
+
+    .label {
+      color: $disabled;
+
+      .asteriskRequired {
+        margin-left: 4px;
+        font-size: 1rem;
+        color: $c_danger;
+      }
+    }
+  }
+}
+
+.optionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .selectChecked {
+    color: $c_primary;
+    margin-left: 30px;
+  }
+}

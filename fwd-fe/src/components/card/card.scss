@@ -1,0 +1,13 @@
+@import 'src/assets/css/utilities/index';
+
+.btb-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background: $white;
+  padding: 20px 30px;
+  border-radius: 10px;
+  @include common-box-shadow;
+}

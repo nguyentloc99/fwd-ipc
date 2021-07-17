@@ -1,0 +1,20 @@
+{
+  "name": "btb-admin-webapp",
+  "version": "1.0.0",
+  "description": "config server btb-admin-webapp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "react"
+  ],
+  "author": "manh.nguyen@vmodev.com",
+  "license": "ISC",
+  "dependencies": {
+    "compression": "^1.7.2",
+    "express": "^4.16.3",
+    "helmet": "^3.12.0"
+  }
+}

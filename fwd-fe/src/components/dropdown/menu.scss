@@ -1,0 +1,39 @@
+@import 'src/assets/css/utilities/index';
+
+.menuWrapper {
+  &.shadowMenu .menu {
+    box-shadow: $box-shadow;
+  }
+  .menu {
+    margin: 0;
+    padding: 20px 26px;
+    list-style: none;
+    background-color: #fff;
+    border-radius: $card-border-radius;
+    z-index: $zindex-dropdown;
+    box-shadow: $box-shadow;
+  }
+
+  .menuItem {
+    display: block;
+    width: auto;
+    overflow: hidden;
+    font-size: 1rem;
+    box-sizing: border-box;
+    min-height: 27px;
+    font-weight: 400;
+    line-height: 27px;
+    padding-top: 6px;
+    white-space: nowrap;
+    cursor: pointer;
+    letter-spacing: 0.00938em;
+    padding-bottom: 6px;
+    color: $black;
+    &:not(:first-child) {
+      margin-top: 5px;
+    }
+    &:hover {
+      color: $primary;
+    }
+  }
+}

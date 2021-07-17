@@ -1,0 +1,10 @@
+@import '../../assets/css/utilities';
+
+.container-fluid {
+  padding-left: 100px;
+  padding-right: 100px;
+  @include media-breakpoint-down(md) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

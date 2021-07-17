@@ -1,0 +1,148 @@
+@import 'src/assets/css/utilities/index';
+
+.paging-previous,
+.paging-next {
+  button {
+    @include reset-button;
+    padding: 15px;
+  }
+}
+
+.pagination {
+  @include reset-list;
+  display: flex;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.paging-center {
+  .pagination {
+    justify-content: center;
+  }
+}
+
+.paging-item {
+  margin: 0 5px;
+  outline: none !important;
+
+  button {
+    @include reset-button;
+    text-align: center;
+    padding: 5px 15px;
+    min-height: 40px;
+    min-width: 40px;
+    font-size: $p_font_size;
+    color: $c_secondary;
+    border: solid 1px transparent;
+    background-color: $bg_management;
+    border-radius: 5px !important;
+
+    &:hover {
+      color: $c_primary;
+    }
+
+    &:disabled {
+      background: transparent !important;
+      color: $c_grey !important;
+    }
+
+    @include media-breakpoint-down(xs) {
+      padding: 5px;
+      min-height: 30px;
+      min-width: 30px;
+    }
+  }
+
+  &.active {
+    button {
+      border: solid 1px $c_primary !important;
+      background-color: $c_primary_lighter !important;
+      color: $c_primary !important;
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+
+    button {
+      opacity: 0.4;
+    }
+  }
+}
+
+.paging-other-item {
+  margin: 0px;
+  outline: none !important;
+
+  button {
+    @include reset-button;
+    cursor: default;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 5px 0px;
+    margin-top: -5px;
+    min-height: 40px;
+    min-width: 40px;
+    font-size: $p_font_size;
+    color: $c_secondary;
+    background-color: transparent;
+    border: solid 1px transparent;
+    border-radius: 5px !important;
+
+    @include media-breakpoint-down(xs) {
+      min-height: 30px;
+      min-width: 30px;
+    }
+  }
+}
+
+.control-page {
+  background-color: $bg_management;
+  // width: 170px;
+  height: 40px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  font-size: $p_font_size;
+  padding-left: 10px;
+  margin-left: 20px;
+
+  input {
+    display: inline-flex;
+    border: none;
+    background-color: transparent;
+    color: $c_secondary;
+    width: 100%;
+    &:hover,
+    &:active,
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: $c_grey;
+    }
+  }
+
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  button {
+    @include reset-button;
+    padding: 0px 10px;
+    color: $white;
+    background-color: $c_secondary;
+    height: 40px;
+    border-radius: 0px 7px 7px 0px;
+  }
+}
